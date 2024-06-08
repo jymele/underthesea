@@ -4,6 +4,7 @@ import Lighting from "./utils/Lighting";
 import Controls from "./utils/Controls";
 import Floor from "./components/Floor";
 import { Physics } from "@react-three/rapier";
+import Player from "./components/Player";
 
 interface Props {}
 
@@ -16,16 +17,13 @@ function Experience(props: Props) {
       className="scene"
       camera={{
         fov: 75,
-        position: [0, 2, 5],
+        position: [-1, 12, 15],
       }}
     >
       <Controls />
       <Lighting />
-      <Physics debug>
-        <mesh castShadow position-y={0.5}>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshLambertMaterial color="hotpink" reflectivity={1} />
-        </mesh>
+      <Physics debug gravity={[0, -1.2, 0]}>
+        <Player />
         <Floor />
       </Physics>
     </Canvas>
