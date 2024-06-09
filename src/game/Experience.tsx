@@ -3,6 +3,7 @@ import Lighting from "./utils/Lighting";
 import Floor from "./components/Floor";
 import { Physics } from "@react-three/rapier";
 import Player from "./components/Player";
+import FishBank from "./components/FishBank";
 
 interface Props {}
 
@@ -22,6 +23,7 @@ function Experience(props: Props) {
       <Physics gravity={[0, -1.2, 0]}>
         <Player />
         <Floor />
+        <FishBank />
       </Physics>
     </Canvas>
   );
