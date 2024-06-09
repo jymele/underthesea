@@ -1,13 +1,18 @@
-import { RigidBody } from "@react-three/rapier";
+import { RefObject, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import Ecctrl, { useGame } from "ecctrl";
 
 interface Props {}
 
 function Player(props: Props) {
   const {} = props;
 
+  useFrame(() => {});
+
   return (
     <>
-      <RigidBody type="kinematicVelocity" position-y={5.5}>
+      {/* <RigidBody type="kinematicVelocity" position-y={5.5}> */}
+      <Ecctrl>
         <group scale={0.5}>
           <mesh castShadow>
             <boxGeometry args={[0.5, 0.5, 1]} />
@@ -22,7 +27,8 @@ function Player(props: Props) {
             <meshLambertMaterial color="hotpink" reflectivity={1} />
           </mesh>
         </group>
-      </RigidBody>
+      </Ecctrl>
+      {/* </RigidBody> */}
     </>
   );
 }

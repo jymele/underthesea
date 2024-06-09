@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
 
 import Lighting from "./utils/Lighting";
-import Controls from "./utils/Controls";
 import Floor from "./components/Floor";
 import { Physics } from "@react-three/rapier";
 import Player from "./components/Player";
+import { OrbitControls } from "@react-three/drei";
 
 interface Props {}
 
@@ -20,7 +20,7 @@ function Experience(props: Props) {
         position: [-1, 12, 15],
       }}
     >
-      <Controls />
+      <OrbitControls />
       <Lighting />
       <Physics debug gravity={[0, -1.2, 0]}>
         <Player />
