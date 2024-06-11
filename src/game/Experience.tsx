@@ -20,7 +20,7 @@ function Experience(props: Props) {
       }}
     >
       <Lighting />
-      <Physics gravity={[0, -1.2, 0]}>
+      <Physics debug gravity={[0, -1.2, 0]}>
         <Player />
         <Floor />
         <FishBank />

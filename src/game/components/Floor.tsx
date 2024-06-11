@@ -8,7 +8,7 @@ function Floor(props: Props) {
 
   return (
     <>
-      <RigidBody type="fixed" position-y={-0.075}>
+      <RigidBody colliders="trimesh" type="fixed" position-y={-0.075}>
         <mesh
           receiveShadow
           // position-y={-0.075}

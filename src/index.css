@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  --color-water: #19699e;
+  /* --color-water: #19699e; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,5 +20,6 @@ body {
   padding: 0;
   min-height: 100dvh;
   height: 100%;
-  background-color: var(--color-water);
+  /* background-color: var(--color-water); */
+  background: linear-gradient(180deg, #0c368b 0%, #2c009a 100%);
 }
