@@ -1,24 +1,38 @@
 import { RigidBody } from "@react-three/rapier";
-import React from "react";
+import * as THREE from "three";
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { GLTF } from "three-stdlib";
 
 interface Props {}
 
-function Floor(props: Props) {
+type GLTFResult = GLTF & {
+  nodes: {
+    Floor: THREE.Mesh;
+  };
+  materials: {
+    Floor: THREE.MeshStandardMaterial;
+  };
+};
+
+export default function Floor(props: Props) {
   const {} = props;
+  const { nodes, materials } = useGLTF("/models/floor.glb") as GLTFResult;
 
   return (
     <>
       <RigidBody colliders="trimesh" type="fixed" position-y={-0.075}>
-        <mesh
-          receiveShadow
-          // position-y={-0.075}
-        >
-          <cylinderGeometry args={[10, 10, 0.15, 8]} />
-          <meshLambertMaterial color="white" reflectivity={1} />
-        </mesh>
+        <group {...props} dispose={null}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Floor.geometry}
+            material={materials.Floor}
+          />
+        </group>
       </RigidBody>
     </>
   );
 }
 
-export default Floor;
+useGLTF.preload("/floor.glb");
