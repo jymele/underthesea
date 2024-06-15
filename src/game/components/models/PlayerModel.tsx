@@ -43,6 +43,7 @@ export default function PlayerModel(props: JSX.IntrinsicElements["group"]) {
           />
           <skinnedMesh
             name="body"
+            castShadow
             geometry={nodes.body.geometry}
             material={materials.Material}
             skeleton={nodes.body.skeleton}

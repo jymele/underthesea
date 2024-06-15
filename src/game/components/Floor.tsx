@@ -24,7 +24,7 @@ export default function Floor(props: Props) {
       <RigidBody colliders="trimesh" type="fixed" position-y={-0.075}>
         <group {...props} dispose={null}>
           <mesh
-            castShadow
+            // castShadow
             receiveShadow
             geometry={nodes.Floor.geometry}
             material={materials.Floor}
